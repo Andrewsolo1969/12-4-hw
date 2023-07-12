@@ -15,9 +15,20 @@
 количество пользователей, закреплённых в этом магазине.
 
 Скрипт
-SELECT  s.first_name,s.last_name , c.city, count(c2.first_name) from staff s join address a on a.address_id = s.address_id join city c on c.city_id = a.city_id join customer c2  on c2.customer_id = c2.customer_id  GROUP BY c.city, s.first_name ,s.last_name  HAVING COUNT(c2.customer_id) > 300;
 
-![Z1.png](https://github.com/Andrewsolo1969/12-4-hw/blob/main/img/Z1.png)
+SELECT s.first_name , s.last_name , c.city, count(c2.first_name) 
+from staff s 
+join address a on a.address_id = s.address_id 
+join city c on c.city_id = a.city_id 
+join customer c2 on c2.store_id = s.store_id 
+GROUP  BY c.city, s.first_name ,s.last_name HAVING COUNT(c2.customer_id) > 300;
+
+
+![Z1-1.png](https://github.com/Andrewsolo1969/12-4-hw/blob/main/img/Z1-1.png)
+
+![Z1-2.png](https://github.com/Andrewsolo1969/12-4-hw/blob/main/img/Z2-1.png)
+
+![diagram.png](https://github.com/Andrewsolo1969/12-4-hw/blob/main/img/diagram.png)
 
 
 
@@ -40,10 +51,12 @@ SELECT COUNT(`length`) film_id  FROM film f  WHERE `length` > (SELECT AVG(`lengt
 
 Скрипт
 
-SELECT MONTH (payment_date), COUNT(rental_id), Sum(amount)  FROM payment
-p  GROUP BY MONTH (payment_date)  order by SUM(amount) DESC LIMIT 1;
+SELECT YEAR(payment_date) , MONTH(payment_date), COUNT(rental_id), Sum(amount) 
+FROM payment p GROUP BY YEAR(payment_date) , MONTH(payment_date) order by SUM(amount) DESC LIMIT 1;
 
-![Z3.png](https://github.com/Andrewsolo1969/12-4-hw/blob/main//img/Z3.png)
+![Z3-1.png](https://github.com/Andrewsolo1969/12-4-hw/blob/main//img/Z3-1.png)
+
+![Z3-2.png](https://github.com/Andrewsolo1969/12-4-hw/blob/main//img/Z3-2.png)
 
 
 

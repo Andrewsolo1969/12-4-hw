@@ -26,7 +26,7 @@ GROUP  BY c.city, s.first_name ,s.last_name HAVING COUNT(c2.customer_id) > 300;
 
 ![Z1-1.png](https://github.com/Andrewsolo1969/12-4-hw/blob/main/img/Z1-1.png)
 
-![Z1-2.png](https://github.com/Andrewsolo1969/12-4-hw/blob/main/img/Z2-1.png)
+![Z1-2.png](https://github.com/Andrewsolo1969/12-4-hw/blob/main/img/Z1-2.png)
 
 ![diagram.png](https://github.com/Andrewsolo1969/12-4-hw/blob/main/img/diagram.png)
 
